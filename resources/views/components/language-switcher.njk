@@ -1,0 +1,16 @@
+
+<button class="header__btn-lang flex items-center gap-1.75 cursor-pointer select-none" data-lang-toggle>
+    <span class="header__btn-lang-text text-xl font-medium">RU</span>
+
+    <span
+        class="header__btn-lang-arrow w-5.5 h-5.5 rounded-full flex items-center justify-center transition-transform duration-200">
+        <img src="resources/images/fa-caret-down.svg" alt="arrow" />
+    </span>
+</button>
+
+<div class="hidden absolute left-1/2 -translate-x-1/2
+           max-w-25 min-w-25 w-full bg-Framework-base-100 p-2 rounded-2xl shadow-medium flex flex-col z-50" data-lang-menu>
+    <button class="header__btn-lang-menu">EN</button>
+    <button class="header__btn-lang-menu active">RU</button>
+    <button class="header__btn-lang-menu">DE</button>
+</div>

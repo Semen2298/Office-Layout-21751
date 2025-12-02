@@ -1,0 +1,17 @@
+<!doctype html>
+<html lang="ru">
+  {% include "resources/views/components/head.njk" %}
+
+  <body>
+    {% include "resources/views/components/header.njk" %}
+
+    <main>
+      {% block content %}{% endblock %}
+    </main>
+
+    {% include "resources/views/components/footer.njk" %}
+
+    <script type="module" src="/resources/js/main.js"></script>
+  </body>
+
+</html>

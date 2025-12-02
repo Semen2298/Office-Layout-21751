@@ -1,0 +1,45 @@
+<div class="tool-card group {{ cardClass }} w-full max-w-[343px] rounded-[18px] border-none transition-all duration-300 relative overflow-hidden group-focus-within:text-white group-hover:text-white">
+
+  <a href="{{ href }}" class="block w-full max-w-[192px] mt-7.5 ml-9.5 mr-auto group-focus-within:text-white group-hover:text-white">
+    <h3
+      class="flex items-center text-2xl min-h-[60px] font-semibold text-slate-800  transition-all duration-300 text-Local-header group-hover:text-white group-focus-within:text-white   leading-[1.2] tracking-[-0.24px]">
+      {{ title }}
+    </h3>
+
+    <p class="  min-h-[85px] {{ styleP }} mt-[5px] transition-all duration-300 text-Local-text-minor group-hover:text-white group-focus-within:text-white   text-4.5 leading-[1.1] tracking-[-0.18px]">
+      {{ description }}
+    </p>
+  </a>
+
+  <div
+    class="tool-card__file-icon-bg absolute top-0 right-0 max-w-25 max-h-25 w-full h-full flex items-center justify-center rounded-r-2xl rounded-bl-2xl transition-all duration-200">
+    <span class="tool-card__file-icon w-[47px] h-[54px] group-hover:w-[54px] group-hover:h-[62px] transition-all duration-200">
+      {% include icon %}
+    </span>
+
+    <div class="absolute -left-3.5 top-1/2 -translate-y-1/2 flex items-center justify-center opacity-0 
+                group-hover:opacity-100 transition-opacity duration-200 w-8 h-8 bg-white rounded-[50%]">
+      <svg class=" w-3 h-3 rotate-45" width="65" height="64" viewBox="0 0 65 64" fill="none"
+        xmlns="http://www.w3.org/2000/svg">
+        <path class="tool-card__arrow-icon"
+          d="M45.7741 46.2364C45.7969 51.2687 49.8818 55.3194 54.9027 55.3194H54.9484C59.992 55.2966 64.0542 51.1886 64.0314 46.1452L63.8374 9.26563C63.8146 4.25642 59.7639 0.205357 54.7544 0.182572L17.8747 0L17.8291 0C12.8082 0 8.72327 4.05078 8.70049 9.08305C8.67766 14.1267 12.7399 18.2345 17.7835 18.2572L32.7772 18.3257L2.67877 48.4242C-0.892925 51.9959 -0.892925 57.7582 2.67877 61.3299C4.45887 63.11 6.7982 64 9.13717 64C11.4764 64 13.8157 63.1099 15.5956 61.3299L45.694 31.2314L45.7741 46.2364Z"
+          fill="black" />
+      </svg>
+    </div>
+  </div>
+  <!-- Items -->
+  <div class="flex flex-col">
+    {% for item in items %}
+    <a href="{{ item.href }}" class="card__item flex items-center gap-2.5 py-3.5 pl-9.5 transition-all duration-300">
+
+      <span class="tool-card__item-icon w-5.25 h-6 transition flex">
+        {% include item.icon %}
+      </span>
+
+      <span class="text-Framework-base-content font-medium group-hover:text-white group-focus-within:text-white   transition">
+        {{ item.text }}
+      </span>
+    </a>
+    {% endfor %}
+  </div>
+</div>

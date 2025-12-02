@@ -1,0 +1,345 @@
+{# resources/views/pages/main.njk #}
+
+{% set title = "PDFStorm — онлайн-сервис для работы с PDF" %}
+
+{% block content %}
+<section class="hero relative overflow-hidden pt-5 md:pt-8 2xl:pt-12 3xl:pt-23.75">
+  <div class="container">
+
+    <h1
+      class="relative z-10 text-white font-extrabold 
+      text-3xl min-[864px]:text-[40px] min-[1024px]:text-[50px] min-[1680px]:text-6xl 
+      max-w-[290px] min-[864px]:max-w-[374px] min-[1024px]:max-w-[474px] min-[1680px]:max-w-[735px] min-[1920px]:max-w-[830px] 
+      min-h-[150px] min-[864px]:min-h-[230px] min-[1024px]:min-h-[318px] min-[1920px]:min-h-[318px] 
+      leading-tight 
+      before:absolute before:w-[1000%] before:bg-Framework-primary before:h-full before:-z-1 before:-left-[200%]
+      flex items-center">
+      Все инструменты для конвертации PDF онлайн
+    </h1>
+
+    <div class="relative z-100 flex flex-wrap gap-2 pt-3.75 pb-3.75">
+      <button class="hero-filter active px-3">Все</button>
+      <button class="hero-filter">Конвертировать</button>
+      <button class="hero-filter">Редактировать</button>
+      <button class="hero-filter">Безопасность</button>
+      <button class="hero-filter">Картинки</button>
+      <button class="hero-filter">Другое</button>
+    </div>
+
+  </div>
+
+  <!-- Изображение справа -->
+  <div
+    class="absolute 
+    -right-19 lg: xl:right-9.25 min-[1920px]:right-16.5 
+    -top-15.5 lg:top-1/2 lg:-translate-y-1/2 min-w-[1680px]:translate-0 min-[1680px]:-top-31.75 min-[1920px]:-top-27.5 
+    z-11
+    before:absolute before:bg-[url('resources/images/storm1-bg.svg')] before:bg-no-repeat before:blur-[204px] before:top-0 before:left-0 before:w-full before:h-[582px] before:-z-5  
+    hidden min-[864px]:block">
+    <img src="resources/images/storm1-pic.png" alt="PDF tools" class="z-20 
+    w-full max-w-[556px] min-[1024px]:max-w-[682px] min-[1680px]:max-w-[782px] min-[1920px]:max-w-[878px] 
+    pointer-events-none select-none 
+    " />
+  </div>
+</section>
+
+<section class="pt-7.5 pb-15 bg-[#EDF4FF]">
+  <div class="container">
+    <div class="flex items-start gap-[30px] flex-wrap">
+      {# КАРТОЧКА 1 #}
+      {% set items_word_pdf = [
+      { text: "Конвертация DOC в PDF", href: "#", icon: "resources/images/file-icon/doc.svg", bg: "" },
+      { text: "Конвертация DOCX в PDF", href: "#", icon: "resources/images/file-icon/doc.svg", bg: "" },
+      { text: "Конвертация ODT в PDF", href: "#", icon: "resources/images/file-icon/doc.svg", bg: "" },
+      { text: "Конвертация RTF в PDF", href: "#", icon: "resources/images/file-icon/doc.svg", bg: "" }
+      ] %}
+
+      {% set cardClass = "tool-card--blue" %}
+      {% set href = "#" %}
+      {% set title = "Word в PDF" %}
+      {% set description = "Конвертация текстовых документов в PDF." %}
+      {% set icon = "resources/images/file-icon/pdf.svg" %}
+      {% set bg = "" %}
+      {% set items = items_word_pdf %}
+
+      {% include "resources/views/components/tool-card.njk" %}
+
+
+      {# КАРТОЧКА 2 #}
+      {% set items_word_pdf = [
+      { text: "Конвертация PDF в DOC", href: "#", icon: "resources/images/file-icon/pdf-file.svg", bg: "" },
+      { text: "Конвертация PDF в DOCX", href: "#", icon: "resources/images/file-icon/pdf-file.svg", bg: "" },
+      { text: "Конвертация PDF в ODT", href: "#", icon: "resources/images/file-icon/pdf-file.svg", bg: "" },
+      { text: "Конвертация PDF в RTF", href: "#", icon: "resources/images/file-icon/pdf-file.svg", bg: "" }
+      ] %}
+
+      {% set cardClass = "tool-card--light-blue" %}
+      {% set href = "#" %}
+      {% set title = "PDF в Word" %}
+      {% set description = "Конвертация PDF в редактируемые документы." %}
+      {% set icon = "resources/images/file-icon/doc.svg" %}
+      {% set bg = "" %}
+      {% set items = items_word_pdf %}
+
+      {% include "resources/views/components/tool-card.njk" %}
+
+
+      {# КАРТОЧКА 3 #}
+      {% set items_word_pdf = [
+      { text: "Конвертация XLS в PDF", href: "#", icon: "resources/images/file-icon/file-exel.svg", bg: "" },
+      { text: "Конвертация XLSX в PDF", href: "#", icon: "resources/images/file-icon/file-exel.svg", bg: "" },
+      { text: "Конвертация ODS в PDF", href: "#", icon: "resources/images/file-icon/file-exel.svg", bg: "" }
+      ] %}
+
+      {% set cardClass = "tool-card--green" %}
+      {% set href = "#" %}
+      {% set title = "Excel в PDF" %}
+      {% set description = "Конвертация файлов таблиц в PDF." %}
+      {% set icon = "resources/images/file-icon/pdf.svg" %}
+      {% set bg = "" %}
+      {% set items = items_word_pdf %}
+
+      {% include "resources/views/components/tool-card.njk" %}
+
+
+      {# КАРТОЧКА 4 #}
+      {% set items_word_pdf = [
+      { text: "Конвертация PPT в PDF", href: "#", icon: "resources/images/file-icon/presentation.svg", bg: "" },
+      { text: "Конвертация PPTX в PDF", href: "#", icon: "resources/images/file-icon/presentation.svg", bg: "" },
+      { text: "Конвертация ODP в PDF", href: "#", icon: "resources/images/file-icon/presentation.svg", bg: "" }
+      ] %}
+
+      {% set cardClass = "tool-card--orange" %}
+      {% set href = "#" %}
+      {% set title = "PowerPoint в PDF" %}
+      {% set description = "Конвертация файлов презентаций в PDF." %}
+      {% set icon = "resources/images/file-icon/pdf.svg" %}
+      {% set bg = "" %}
+      {% set items = items_word_pdf %}
+
+      {% include "resources/views/components/tool-card.njk" %}
+
+
+      {# КАРТОЧКА 5 #}
+      {% set items_word_pdf = [
+      { text: "Конвертация DJVU в PDF", href: "#", icon: "resources/images/file-icon/ebook.svg", bg: "" },
+      { text: "Конвертация PDF в DJVU", href: "#", icon: "resources/images/file-icon/pdf-file.svg", bg: "" },
+      { text: "Конвертация EPUB в PDF", href: "#", icon: "resources/images/file-icon/ebook.svg", bg: "" },
+      { text: "Конвертация PDF в EPUB", href: "#", icon: "resources/images/file-icon/pdf-file.svg", bg: "" },
+      { text: "Конвертация FB2 в PDF", href: "#", icon: "resources/images/file-icon/ebook.svg", bg: "" },
+      { text: "Конвертация PDF в FB2", href: "#", icon: "resources/images/file-icon/pdf-file.svg", bg: "" }
+      ] %}
+
+      {% set cardClass = "tool-card--purple" %}
+      {% set href = "#" %}
+      {% set title = "Электронные книги" %}
+      {% set description = "Конвертация электронных книг из/в PDF." %}
+      {% set icon = "resources/images/file-icon/ebook.svg" %}
+      {% set bg = "" %}
+      {% set items = items_word_pdf %}
+
+      {% include "resources/views/components/tool-card.njk" %}
+
+
+      {# КАРТОЧКА 6 #}
+      {% set items_word_pdf = [
+      { text: "Конвертация Jpeg в PDF", href: "#", icon: "resources/images/file-icon/picture.svg", bg: "" },
+      { text: "Конвертация Jpeg в PDF", href: "#", icon: "resources/images/file-icon/picture.svg", bg: "" },
+      { text: "Конвертация Png в PDF", href: "#", icon: "resources/images/file-icon/picture.svg", bg: "" }
+      ] %}
+
+      {% set cardClass = "tool-card--red" %}
+      {% set href = "#" %}
+      {% set title = "Картинки в PDF" %}
+      {% set description = "Конвертация изображений в PDF." %}
+      {% set icon = "resources/images/file-icon/pdf.svg" %}
+      {% set bg = "" %}
+      {% set items = items_word_pdf %}
+
+      {% include "resources/views/components/tool-card.njk" %}
+
+
+      {# КАРТОЧКА 7 #}
+      {% set items_word_pdf = [
+      { text: "Организовать PDF", href: "#", icon: "resources/images/file-icon/pdf-file.svg", bg: "" },
+      { text: "Повернуть PDF", href: "#", icon: "resources/images/file-icon/pdf-file.svg", bg: "" },
+      { text: "Удаление страниц из PDF", href: "#", icon: "resources/images/file-icon/pdf-file.svg", bg: "" },
+      { text: "Объединение PDF файлов", href: "#", icon: "resources/images/file-icon/pdf-file.svg", bg: "" },
+      { text: "Разделение PDF", href: "#", icon: "resources/images/file-icon/pdf-file.svg", bg: "" },
+      { text: "Извлечение страниц из...", href: "#", icon: "resources/images/file-icon/pdf-file.svg", bg: "" }
+      ] %}
+
+      {% set cardClass = "tool-card--birch" %}
+      {% set href = "#" %}
+      {% set title = "Редактировать PDF" %}
+      {% set description = "Изменение PDF файла." %}
+      {% set icon = "resources/images/file-icon/Union.svg" %}
+      {% set bg = "" %}
+      {% set items = items_word_pdf %}
+
+      {% include "resources/views/components/tool-card.njk" %}
+
+
+      {# КАРТОЧКА 8 #}
+      {% set items_word_pdf = [
+      { text: "Конвертация PDF в Jpeg", href: "#", icon: "resources/images/file-icon/pdf-file.svg", bg: "" },
+      { text: "Конвертация PDF в Png", href: "#", icon: "resources/images/file-icon/pdf-file.svg", bg: "" }
+      ] %}
+
+      {% set cardClass = "tool-card--yellow" %}
+      {% set href = "#" %}
+      {% set title = "PDF в картинки" %}
+      {% set description = "Конвертация PDF в изображения." %}
+      {% set icon = "resources/images/file-icon/pdf.svg" %}
+      {% set bg = "" %}
+      {% set items = items_word_pdf %}
+
+      {% include "resources/views/components/tool-card.njk" %}
+
+      {# КАРТОЧКА 9 #}
+      {% set items_word_pdf = [
+      { text: "Распознавание текста в PDF", href: "#", icon: "resources/images/file-icon/Union.svg", bg: "" },
+      { text: "Сделать PDF черно-белым", href: "#", icon: "resources/images/file-icon/Union.svg", bg: "" },
+      { text: "Веб-страница в PDF", href: "#", icon: "resources/images/file-icon/pdf-file.svg", bg: "" },
+      { text: "Конвертация PDF в PDF/A", href: "#", icon: "resources/images/file-icon/pdf-file.svg", bg: "" },
+      { text: "Сжатие PDF", href: "#", icon: "resources/images/file-icon/Union.svg", bg: "" }
+      ] %}
+
+      {% set cardClass = "tool-card--gray" %}
+      {% set href = "#" %}
+      {% set title = "Другие инструменты" %}
+      {% set description = "" %}
+      {% set styleP = "min-h-[30px]! mt-0!" %}
+      {% set icon = "resources/images/file-icon/other_tools.svg" %}
+      {% set bg = "" %}
+      {% set items = items_word_pdf %}
+
+      {% include "resources/views/components/tool-card.njk" %}
+
+      {# КАРТОЧКА 10 #}
+      {% set items_word_pdf = [
+      { text: "Установка пароля в PDF", href: "#", icon: "resources/images/file-icon/Union.svg", bg: "" },
+      { text: "Удаление пароля из PDF", href: "#", icon: "resources/images/file-icon/Union.svg", bg: "" }
+      ] %}
+
+      {% set cardClass = "tool-card--gray" %}
+      {% set href = "#" %}
+      {% set title = "Безопасность PDF" %}
+      {% set description = "" %}
+      {% set styleP = "min-h-[30px]! mt-0!" %}
+      {% set icon = "resources/images/file-icon/safety.svg" %}
+      {% set bg = "" %}
+      {% set items = items_word_pdf %}
+
+      {% include "resources/views/components/tool-card.njk" %}
+    </div>
+  </div>
+</section>
+<section class="pb-20">
+  <div class="container flex flex-col lg:flex-row items-center lg:gap-0 max-2xl:gap-6.25 min-2xl:gap-27.5">
+
+    <div class="">
+      <img src="resources/images/pic.png" alt="PDF Converter"
+        class="w-full w-full max-w-[322px] md:max-w-[517px] 2xl:max-w-[622px]">
+    </div>
+
+    <div class="max-w-[585px]">
+      <h2 class="text-3xl md:text-4xl text-center lg:text-left font-semibold text-Framework-primary mb-7.5 -mt-[13px] lg:mt-0">
+        Онлайн-конвертер PDF
+      </h2>
+
+      <p class=" text-black">
+        <span class="font-bold">PDFStorm</span> — онлайн-сервис для редактирования и конвертации
+        PDF-файлов в любые популярные форматы. Получите нужный документ в несколько кликов —
+        быстро, безопасно и с высоким качеством.
+      </p>
+    </div>
+
+  </div>
+</section>
+<section class="pt-12 pb-16 border-t border-solid border-Framework-base-300">
+  <div class="container flex flex-col md:flex-row lg:justify-center xl:justify-start md:flex-wrap gap-7.5 md:gap-10">
+
+    <div class="flex flex-col md:flex-row justify-center items-center md:items-start md:gap-5">
+      <img src="resources/images/time-icon.svg" alt="" class="w-12 h-12 md:w-16 md:h-16">
+
+      <div class="max-w-max w-full md:max-w-[544px] xl:max-w-[490px] min-2xl:max-w-[585px]">
+        <h3 class="text-2xl font-medium text-Framework-primary md:h-16 flex items-center justify-center md:justify-start">
+          Простота и скорость
+        </h3>
+
+        <p class="text-Framework-neutral mt-[19px] mb-2.5">
+          Загрузите ваш PDF-файл, выберите нужный формат и запустите процесс.
+          Наш интеллектуальный движок сделает всё остальное.
+        </p>
+
+        <ul class="flex flex-col gap-2.5">
+          <li><span class="text-Framework-secondary-focus ml-3.5">1.</span> Загрузите документ</li>
+          <li><span class="text-Framework-secondary-focus ml-3.5">2.</span> Выберите формат для конвертации</li>
+          <li><span class="text-Framework-secondary-focus ml-3.5">3.</span> Скачайте готовый файл</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="flex flex-col md:flex-row justify-center items-center md:items-start md:gap-5">
+      <img src="resources/images/marks-icon.svg" alt="" class="w-12 h-12 md:w-16 md:h-16">
+
+      <div class="max-w-max w-full md:max-w-[544px] xl:max-w-[490px] min-2xl:max-w-[585px]">
+        <h3 class="text-2xl font-medium text-Framework-primary md:h-16 flex items-center justify-center md:justify-start">
+         Редактирование
+        </h3>
+
+        <p class="text-Framework-neutral mt-[19px] mb-2.5">
+          Редактируйте PDF-файлы онлайн без необходимости установки программ:
+        </p>
+
+        <ul class="flex flex-col gap-2.5">
+          <li><span class="text-Framework-secondary-focus ml-3.5">–</span> Разделение файлов, удаление и поворот страниц</li>
+          <li><span class="text-Framework-secondary-focus ml-3.5">–</span> Cжатие документов</li>
+          <li><span class="text-Framework-secondary-focus ml-3.5">–</span> Установка и снятие пароля с PDF</li>
+          <li><span class="text-Framework-secondary-focus ml-3.5">–</span> Распознавание текста</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="flex flex-col md:flex-row justify-center items-center md:items-start md:gap-5">
+      <img src="resources/images/knife-icon.svg" alt="" class="w-12 h-12 md:w-16 md:h-16">
+
+      <div class="max-w-max w-full md:max-w-[544px] xl:max-w-[490px] min-2xl:max-w-[585px]">
+        <h3 class="text-2xl font-medium text-Framework-primary md:h-16 flex items-center justify-center md:justify-start">
+         Универсальность
+        </h3>
+
+        <p class="text-Framework-neutral mt-[19px] mb-2.5">
+          Создавайте именно те файлы, которые нужны для работы, учебы или личных проектов. Конвертируйте в:
+        </p>
+
+        <ul class="flex flex-col gap-2.5">
+          <li><span class="text-Framework-secondary-focus ml-3.5">–</span> DOCX (Word) для редактирования текста</li>
+          <li><span class="text-Framework-secondary-focus ml-3.5">–</span> JPG для извлечения изображений</li>
+          <li><span class="text-Framework-secondary-focus ml-3.5">–</span> PPTX (PowerPoint) для презентаций</li>
+          <li><span class="text-Framework-secondary-focus ml-3.5">–</span> Excel (XLSX) для работы с таблицами</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="flex flex-col md:flex-row justify-center items-center md:items-start md:gap-5">
+      <img src="resources/images/shield-icon.svg" alt="" class="w-12 h-12 md:w-16 md:h-16">
+
+      <div class="max-w-max w-full md:max-w-[544px] xl:max-w-[490px] min-2xl:max-w-[585px]">
+        <h3 class="text-2xl font-medium text-Framework-primary md:h-16 flex items-center justify-center md:justify-start">
+         Безопасность
+        </h3>
+
+        <p class="text-Framework-neutral mt-[19px] mb-2.5">
+          Ваши файлы автоматически удаляются с наших серверов через 2 часа после завершения обработки, либо вы можете сами их удалить по нажатию кнопки. PDFStorm гарантирует конфиденциальность ваших данных.
+        </p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+
+{% endblock %}
